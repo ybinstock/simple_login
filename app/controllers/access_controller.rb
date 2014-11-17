@@ -56,6 +56,7 @@ class AccessController < ApplicationController
     redirect_to login_path
   end
 
+
   private
   def user_params
     params.require(:user).permit(:username, :password, :password_digest)
@@ -66,6 +67,7 @@ class AccessController < ApplicationController
       redirect_to login_path, alert: "Please log in"
     end
   end
+
 
   def prevent_login_signup
     if session[:user_id]
